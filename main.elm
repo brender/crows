@@ -1,0 +1,3 @@
+--crows
+
+main = plainText "foo"
