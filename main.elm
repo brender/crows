@@ -9,8 +9,9 @@ main = lift4 container Window.width Window.height (constant middle) images
 crow1 = constant "crow1.jpg"
 crow2 = constant "crow2.jpg"
 
-t = every (second * 2)
-t2 = delay second t
+interval = second / 4
+t = every (interval * 2)
+t2 = delay interval t
 
 crow1Time = sampleOn t crow1
 crow2Time = sampleOn t2 crow2
