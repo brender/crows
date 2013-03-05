@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><title>Main</title><style type="text/css">html,head,body { padding:0; margin:0; }body { font-family: helvetica, arial, sans-serif; }</style></head><body><script type="text/javascript" src="/Users/Brenda/.cabal/share/Elm-0.7.1.1/elm-runtime-0.7.1.1.js"></script><script type="text/javascript">
+try{
+
+if (Elm.Main) throw new Error("Module name collision, 'Main' is already defined."); 
+Elm.Main=function(){
+ var $op={};
+ for(Elm['i'] in Elm){eval('var '+Elm['i']+'=Elm[Elm.i];');}
+ try{
+  if (!(Elm.Prelude instanceof Object)) throw new Error('module not found');
+ } catch(e) {
+  throw new Error("Module 'Prelude' is missing. Compile with --make flag or load missing module in a separate JavaScript file.");
+ }
+ var hiddenVars={};
+ for (Elm['i'] in Elm.Prelude) {
+  if (hiddenVars[Elm['i']]) continue;
+  eval('var ' + Elm['i'] + ' = Elm.Prelude[Elm.i];');}
+ try{
+  if (!(Elm.Time instanceof Object)) throw new Error('module not found');
+ } catch(e) {
+  throw new Error("Module 'Time' is missing. Compile with --make flag or load missing module in a separate JavaScript file.");
+ }
+ var hiddenVars={};
+ for (Elm['i'] in Elm.Time) {
+  if (hiddenVars[Elm['i']]) continue;
+  eval('var ' + Elm['i'] + ' = Elm.Time[Elm.i];');}
+ var crow1_1=constant(Value.str('crow1.jpg'));
+ var crow2_2=constant(Value.str('crow2.jpg'));
+ var interval_3=(second/4);
+ var t_4=every((2*interval_3));
+ var t2_5=delay(interval_3)(t_4);
+ var crow1Time_6=sampleOn(t_4)(crow1_1);
+ var crow2Time_7=sampleOn(t2_5)(crow2_2);
+ var crows_8=merge(crow1Time_6)(crow2Time_7);
+ var images_9=lift(image(600)(450))(crows_8);
+ var main_0=lift4(container)(Window.width)(Window.height)(constant(middle))(images_9);
+ return {$op : {},
+ main:main_0,
+ crow1:crow1_1,
+ crow2:crow2_2,
+ interval:interval_3,
+ t:t_4,
+ t2:t2_5,
+ crow1Time:crow1Time_6,
+ crow2Time:crow2Time_7,
+ crows:crows_8,
+ images:images_9};}();
+Elm.main=function(){
+ return Elm.Main.main;};
+} catch (e) {
+Elm.main=function() {
+var msg = ('<br/><h2>Your browser may not be supported. Are you using a modern browser?</h2>' + '<br/><span style="color:grey">Runtime Error in Main module:<br/>' + e + '</span>');
+document.body.innerHTML = Elm.Text.monospace(msg);throw e;};}</script><div id="widthChecker" style="width:100%; height:1px; position:absolute; top:-1px;"></div><div id="content"></div><script type="text/javascript">Dispatcher.initialize()</script><noscript><p>crow1.jpg</p><p>crow2.jpg</p></noscript></body></html>
